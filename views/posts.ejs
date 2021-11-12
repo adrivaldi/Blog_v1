@@ -1,0 +1,30 @@
+<%- include('header.ejs') -%>
+<div class="body">
+    <form action="/posts" method="post">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+          />
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea
+          name="textArea"
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+        <div>
+          <button class="btn btn-lg btn-primary mt-2">Post</button>
+        </div>
+      </form>
+</div>
+
+</body>
+</html>
