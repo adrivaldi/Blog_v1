@@ -9,26 +9,33 @@ let loremDesc =
 
 let posts = [loremDesc, loremDesc];
 
-console.log("here0");
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views", "./views");
 app.get("/", (req, res) => {
   let days = [];
   for (let i = 1; i <= posts.length; i++) {
     days = [...days, "Day " + i];
-    console.log("here1");
-    console.log("Length posts: " + posts.length);
-    console.log("i: " + i);
-    console.log(days);
   }
-  console.log("here2");
+
   res.render("index.ejs", { posts: posts, days: days });
 });
 
 app.get("/posts", (req, res) => {
   //   res.render("posts.ejs", { posts: posts });
   res.render("posts.ejs");
+});
+
+app.get("/posts/post", (req, res) => {
+  let days = [];
+  for (let i = 1; i <= posts.length; i++) {
+    days = [...days, "Day " + i];
+  }
+  const page = req.query.entry;
+  res.render("post.ejs", {
+    post: posts[days.indexOf(page)],
+    day: days[days.indexOf(page)],
+  });
 });
 
 app.post("/posts", (req, res) => {

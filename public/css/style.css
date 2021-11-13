@@ -10,3 +10,34 @@
 .body {
   padding: 0 7rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+.text {
+  overflow: hidden;
+  max-width: 75ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.entry {
+  display: flex;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Height of the footer */
+  background: #f8f9fa;
+  color: black;
+  text-align: center;
+  font-family: "Sassy Frass", cursive;
+  font-size: 2rem;
+}
+
+.footer__p {
+  margin-top: 10px;
+}
